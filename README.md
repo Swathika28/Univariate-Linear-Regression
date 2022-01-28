@@ -19,26 +19,29 @@ import numpy as np
 
 # Preprocessing Input data
 
+import numpy as np
+import matplotlib.pyplot as plt
+# Preprocessing Input data
 X = np.array(eval(input()))
 Y = np.array(eval(input()))
-
 # Building the model
-# write your code here
-Xmean = np.mean(X)
-Ymean = np.mean(Y)
-num,den = 0,0
+XMean=np.mean(X)
+YMean=np.mean(Y)
+num,den=0,0
 for i in range(len(X)):
-    num += (X[i]-Xmean)*(Y[i]-Ymean)
-    den += (X[i]-Xmean)**2
-m = num/den
-c = Ymean-m*Xmean
- 
-
+  num+=(X[i]-XMean)*(Y[i]-YMean)
+  den+=(X[i]-XMean)**2
+m=num/den
+#y=mx+c
+c=YMean-m*XMean
 print (m, c)
-
 #Predict the output
-Y_pred = m*X + c
-print (Y_pred)
+Y_Pred=m*X+c
+print (Y_Pred)
+#plotting graph
+plt.scatter(X,Y)
+plt.plot(X,Y_Pred,color="red")
+plt.show()
 
 
 
@@ -49,6 +52,6 @@ print (Y_pred)
 ## Sample Input :
 ![inp](./input.jpg)
 ## output :
-![output](./ss1.png)
+![output](./sy1.png)
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
